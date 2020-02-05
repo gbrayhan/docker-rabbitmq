@@ -1,0 +1,14 @@
+version: '3.5'
+
+services:
+  message:
+    image: rabbitmq:3.8.2-management-alpine
+    ports:
+    - "15672:15672"
+    - "5672:5672"
+    restart: always
+    volumes:
+      - message-vol:/var/lib/rabbitmq
+volumes:
+  message-vol:
+
